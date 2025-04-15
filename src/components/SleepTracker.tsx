@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SleepForm from "./SleepForm";
+import SleepChart from "./SleepChart";
 
 type SleepQuality = "great" | "okay" | "poor";
 
@@ -60,15 +61,16 @@ const SleepTracker = () => {
             onCancelEdit={() => setEditingEntry(null)}
         />
       </div>
+      <SleepChart data={entries} />
 
-      <div className="bg-white rounded-xl shadow-lg p-6">
+      <div className="bg-white dark:bg-zinc-800 rounded-2xl shadow-md p-4 transition-all duration-300">
         <h2 className="text-xl font-semibold mb-4">Sleep History</h2>
         {entries.length === 0 ? (
           <p className="text-gray-500">No entries yet.</p>
         ) : (
           <ul className="space-y-3">
             {entries.map((entry) => (
-              <li key={entry.id} className="border-b pb-2">
+              <li key={entry.id} className="border-b pb-2 transition hover:bg-gray-50 dark:hover:bg-zinc-700 rounded-lg px-2">
                 <div className="flex justify-between items-center">
                   <span className="text-lg">{formatEmoji(entry.quality)}</span>
                   <span className="text-sm text-gray-500">
