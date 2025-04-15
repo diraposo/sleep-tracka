@@ -84,7 +84,7 @@ const SleepForm = ({ onSave, editingEntry, onCancelEdit }: SleepFormProps) => {
           className="w-full border border-gray-300 rounded px-3 py-2"
         />
       </div>
-      
+
       {error && <p className="text-red-500 text-sm">{error}</p>}
 
       <div>
@@ -92,7 +92,7 @@ const SleepForm = ({ onSave, editingEntry, onCancelEdit }: SleepFormProps) => {
         <textarea
           value={note}
           onChange={(e) => setNote(e.target.value)}
-          rows={3}
+          rows={2}
           className="w-full border border-gray-300 rounded px-3 py-2"
         />
       </div>
